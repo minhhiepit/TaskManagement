@@ -1,8 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TaskManagement.Business.Dtos;
 using TaskManagement.Business.Interfaces;
-using TaskManagement.DataAccess.Migrations;
-using TaskManagement.DataAccess.Models;
 
 namespace TaskManagement.Api.Controllers
 {

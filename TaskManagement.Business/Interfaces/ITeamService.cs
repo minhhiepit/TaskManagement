@@ -1,5 +1,4 @@
 ﻿using TaskManagement.Business.Dtos;
-using TaskManagement.DataAccess.Models;
 
 namespace TaskManagement.Business.Interfaces
 {
