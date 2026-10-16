@@ -15,31 +15,31 @@ namespace TaskManagement.Api.Controllers
             _teamService = teamService;
         }
 
-        [HttpGet("GetAllTeams")]
+        [HttpGet("teams")]
         public async Task<IActionResult> GetAllTeams()
         {
             return Ok(await _teamService.GetAllTeamsAsync());
         }
 
-        [HttpGet("GetTeamByName")]
-        public async Task<IActionResult> GetTeamByName(String request)
+        [HttpGet("team/{name}")]
+        public async Task<IActionResult> GetTeamByName(String name)
         {
-            return Ok(await _teamService.GetTeamByNameAsync(request));
+            return Ok(await _teamService.GetTeamByNameAsync(name));
         }
 
-        [HttpPost("AddTeam")]
+        [HttpPost("team")]
         public async Task<IActionResult> AddTeam(TeamDto request)
         {
             return Ok(await _teamService.AddTeamAsync(request));
         }
 
-        [HttpPut("AddMember")]
+        [HttpPut("member/{UserId}")]
         public async Task<IActionResult> AddMember(int UserId, [FromBody] AddUserToTeamDto request)
         {
             return Ok(await _teamService.AddMemberAsync(UserId, request));
         }
 
-        [HttpPut("UpdateTeam")]
+        [HttpPut("team")]
         public async Task<IActionResult> UpdateTeam(int TeamId, [FromBody] TeamDto request) {
             return Ok(await _teamService.UpdateTeamAsync(TeamId,request));
         }

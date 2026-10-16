@@ -15,19 +15,19 @@ namespace TaskManagement.Api.Controllers
             _taskService = taskService;
         }
 
-        [HttpGet("GetAllTasks")]
+        [HttpGet("tasks")]
         public async Task<IActionResult> GetAllTasksAsync(string? Status)
         {
             return Ok(await _taskService.GetAllTasksAsync(Status));
         }
 
-        [HttpPost("AddTask")]
+        [HttpPost("task")]
         public async Task<IActionResult> AddTaskAsync(TaskDto request)
         {
             return Ok(await _taskService.AddTaskAsync(request));
         }
 
-        [HttpPut("UpdateTask/{id}")]
+        [HttpPut("task/{id}")]
         public async Task<IActionResult> UpdateTaskAsync(int id, TaskDto request)
         {
             return Ok(await _taskService.UpdateTaskAsync(id, request));
